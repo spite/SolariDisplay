@@ -12,7 +12,7 @@ Include SolariDisplay.[min.]js and SolariDisplay.css.
 
 ```html
 <script src="SolariDisplay.min.js"></script>
-<link href="../build/SolariBoard.css">
+<link href="SolariBoard.css">
 ````
 
 You'll need to add this markup
@@ -26,7 +26,7 @@ You'll need to add this markup
 and this CSS
 ```css
 #viewport{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
-#container{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; font-family: 'Oswald', sans-serif; }
+#container{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; font-family: sans-serif; }
 ```
 
 and then this basic code:
