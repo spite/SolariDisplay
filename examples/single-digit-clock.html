@@ -1,0 +1,80 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Single-digit clock | CSS3D Split-Flap Display Demo | Clicktorelease</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+		<link href='../build/SolariBoard.css' rel='stylesheet' type='text/css'>
+		<script src="../build/SolariBoard.min.js"></script>
+		<script src="main.js"></script>
+		<style>
+			*{ margin: 0; padding: 0; box-sizing: border-box; moz-box-sizing: boder-box;}
+			body { background-color: #000; background-image: url(real_cf.png); overflow: hidden; }
+			a { color: #ffffff; }
+			#title, #subtitle{ position: absolute; font-family: 'Oswald'; left: 50%; top: 50%; color: white; }
+			#title{ font-size: 60px; text-align: left; margin-top: -150px; margin-left: -330px;}
+			#subtitle{ font-size: 40px; text-align: right; margin-top: 130px; margin-left: -150px;}
+			#viewport{  position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+			#container{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; font-family: 'Oswald', sans-serif; }
+		</style>
+	</head>
+	<body>
+
+		<div id="viewport" class="displayBase">
+			<div id="container" >
+			<p id="title" >The time is</p>
+			<p id="subtitle"><i>brought to you by</i><br/><a href="http://www.clicktorelease.com/blog/split-flap-display">CSS 3D Split-Flap Display</a></p>
+			</div>
+		</div>
+
+		<script>
+		
+		'use strict'
+
+		var startTime = Date.now();
+		
+		window.addEventListener( 'load', function() {
+
+			display = new CTR.SolariBoard( {
+				container: container,
+				format: [ CTR.SOLARIVALUES.number, CTR.SOLARIVALUES.number, ':', CTR.SOLARIVALUES.number, CTR.SOLARIVALUES.number, ':', CTR.SOLARIVALUES.number, CTR.SOLARIVALUES.number ],
+				segmentWidth: 70,
+				segmentHeight: 120,
+				fontSize: 100
+			} );
+
+			update();
+
+		}, false );
+		
+		function update() {
+
+			var d = new Date();
+			var h = d.getHours();
+			var m = d.getMinutes();
+			var s = d.getSeconds();
+			
+			h = ( h < 10 ?'0':'' ) + h;
+			m = ( m < 10 ?'0':'' ) + m;
+			s = ( s < 10 ?'0':'' ) + s;
+
+			display.setContent( [ 
+				h[ 0 ],
+				h[ 1 ],
+				':',
+				m[ 0 ],
+				m[ 1 ] ,
+				':',
+				s[ 0 ],
+				s[ 1 ]
+			] );
+
+			setTimeout( update, 1000 );
+		}
+
+		</script>
+		
+	</body>
+</html>

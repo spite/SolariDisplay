@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Basic example | CSS3D Split-Flap Display Demo | Clicktorelease</title>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+		<link href='../build/SolariBoard.css' rel='stylesheet' type='text/css'>
+		<script src="../build/SolariBoard.min.js"></script>
+		<style>
+			*{ margin: 0; padding: 0; box-sizing: border-box; moz-box-sizing: boder-box;}
+			body { background-color: #000; background-image: url(real_cf.png); overflow: hidden; }
+			a { color: #ffffff; }
+			#viewport{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; }
+			#container{ position: absolute; left: 0; top: 0; right: 0; bottom: 0; font-family: 'Oswald', sans-serif; }
+		</style>
+	</head>
+	<body>
+
+		<div id="viewport" class="displayBase">
+			<div id="container" ></div>
+		</div>
+
+		<script>
+		
+		'use strict'
+
+		var display;
+
+		window.requestAnimationFrame = window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame;
+
+		window.addEventListener( 'load', function() {
+
+			display = new CTR.SolariBoard( {
+				container: container,
+				format: [ 
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter,
+					CTR.SOLARIVALUES.letter
+				 ],
+				segmentWidth: 70,
+				segmentHeight: 120,
+				fontSize: 100
+			} );
+
+			display.setContent( 'HELLO WORLD' );
+
+		}, false );
+
+		
+		</script>
+		
+	</body>
+</html>

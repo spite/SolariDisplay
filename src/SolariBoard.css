@@ -1,0 +1,30 @@
+.displayBase{ 	
+	-webkit-perspective: 400;
+	-moz-perspective: 400px; 
+	-webkit-perspective-origin: 50% 50%;
+	-moz-perspective-origin: 50% 50%;
+}
+.displayBase *{
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+}
+.display{ position: absolute; left: 50%; top: 50%;}
+.segments{ list-style-type: none; float: left; padding: 0;  padding: 10px; border: 20px solid #b70000; border-radius: 10px;
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+}
+.segments *{
+	-webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+}
+.segment{ color: #aaa; text-align: center; width: 60px; height: 80px; position: relative; float:left; text-align: center; }
+.segment div{ text-shadow: 1px 1px 0 rgba(255,255,255,.8), -1px -1px 0 rgba(0,0,0,.8), -1px -1px 0 rgba(0,0,0,.2); left: 0; top: 0; right: 0; bottom: 0; width: 100%; height: 50%; box-shadow: inset 0 0 50px rgba(90,90,90,.2);}
+.segment .front, .segment .flip-front, .segment .flip-back, .segment .back{ position: absolute; overflow: hidden; background-color: #222; text-transform: uppercase; }
+.segment .front{ left: 0; top: 0; border-radius: 5px 5px 0 0; }
+.segment .back{ left: 0; top: 50%; border-radius: 0 0 5px 5px; line-height: 0px; overflow: hidden; }
+.segment .flip-back{ left: 0; top: 0; background-color: black; border-radius: 5px 5px 0 0;
+	-webkit-transform: rotateX( -45deg ); -webkit-transform-origin: 0 50%;
+	-moz-transform: rotateX( -45deg ); -moz-transform-origin: 0 50% }
+.segment .flip-front{ left: 0; top: 0; line-height: 0px; overflow: hidden; border-radius: 0 0 5px 5px; 
+	-webkit-transform: rotateX(135deg) translateY(50%) translateZ(.1px); -webkit-transform-origin: 50% 50%;
+	-moz-transform: rotateX(135deg) translateY(50%) translateZ(.1px); -moz-transform-origin: 50% 50% }
